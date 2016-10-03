@@ -26,14 +26,14 @@
 
 ##***Purpose of this document***
 
-This document is meant to explain the Libre Router linux based open source hardware technologies integrated for creating a secure network for end users to avoid the following issues that may happen with or without our explicit or implicit knowledge: 
+This document is meant to explain the Libre Router linux-based open source hardware technologies, integrated for creating a secure network for end users to avoid the following issues that may happen with or without our explicit or implicit knowledge: 
 
 ##***The need for this technology***
 
 	- Traffic Sniffing: those that are monitoring your traffic (e.g. government spy/monitoring institutions) 
 			-passive actions: collecting general data from worldwide. 
-	- Malicious Internet nodes: better known as blackbones. 
-	- Your Internet provider (ISP): if they would try anything with your data like DNS spoofing, traffic shaping, DPI.
+	- Malicious Internet nodes, otherwise known as blackbones. 
+	- Your Internet provider (ISP): may attempt to misuse your data in ways such as DNS spoofing, traffic shaping, DPI.
 	- Back-doors in software (i.e. Windows, favourite of the NSA) and hardware (Cisco, Huawei, Fortinet, TP-Link) to achieve one or more of the following malicious objectives: Control, Espionage, Privacy spooks, politics, police interception, apply bigdata to your cloud for marketing, law enforcement, market research, or simply hacking outbreaches.
 	
 
@@ -52,13 +52,13 @@ It removes non-free components from Linux that are disguised as source code or d
 
 As explained earlier, it's an operating system kernel and a GNU package whose aim is to remove from the Linux kernel any source code with blobs, obfuscated source code, or proprietary licenses. Software components with no available source code are called binary blobs and, as such, are mostly used for proprietary firmware images in the Linux kernel.
 
-##Ways to remove Proprietary Firmware and their benefits
+##Ways to remove Proprietary Firmware and the benefits thereof
 
 1. Deblobbing : This is the cleaning up and verification of Linux tarballs and patches for non-Free blobs. This is done using the script files deblob-check for verifying the Vanilla Linux kernel tarball for any non-free proprietary blobs. Similarly for removing the blobs there is a script deblob-* where * represents the Kernel version it's tested and applicable for. The script can be found here <http://www.fsfla.org/svn/fsfla/software/linux-libre/scripts/>
 
 2. VRMS(Virtual Richard M. Stallman)
 A program that analyzes the set of currently-installed packages on a Debian-based system, and reports all of the packages from the non-free tree which are currently installed. Software gets placed in the non-free tree when it is agreed not to be too problematic for 
-Debian to distribute but does not meet the Debian Free Software Guidelines and therefore cannot be included in their official distribution. For each program from "non-free" installed, VRMS displays an explanation of why it is non-free, if one is available. More information about VRMS can be found at <https://alioth.debian.org/projects/vrms/>
+Debian to distribute but does not meet the Debian Free Software Guidelines and, therefore, cannot be included in their official distribution. For each program from "non-free" installed, VRMS displays an explanation of why it is non-free, if one is available. More information about VRMS can be found at <https://alioth.debian.org/projects/vrms/>
 
 3. Keep the base deblobbed kernel compilation clean:
 Use clean basement and don't allow installation of 3rd party software that is established by trust control as free of blobs. An example of this for Linux Libre can be found at <http://www.linux-libre.fsfla.org/pub/linux-libre/releases/LATEST-4.6.N/> 
@@ -66,7 +66,7 @@ Use clean basement and don't allow installation of 3rd party software that is es
 ###Kernel
 
 The Linux kernel is a Unix-like computer operating system kernel. The Linux operating system is based on it and deployed on both traditional computer systems such as personal computers and servers, usually in the form of Linux distributions,[9] and on various embedded devices such as routers, wireless access points, PBXes, set-top boxes, FTA receivers, smart TVs, PVRs and NAS appliances. The Android operating system for tablet computers, smartphones and smartwatches is also based atop the Linux kernel.
-The Linux kernel was conceived and created in 1991 by Linus Torvalds[10] for his personal computer with no cross-platform intentions, but has since expanded to support a huge array of computer architectures, many more than other operating systems or kernels
+The Linux kernel was conceived and created in 1991 by Linus Torvalds[10] for his personal computer with no cross-platform intentions, but has since expanded to support a huge array of computer architectures, many more than other operating systems or kernels.
 
 Debian vanilla kernel:
 	- Doesn't include any non-free firmware (bugs aside), but it allows users to load non-free 
@@ -93,11 +93,10 @@ The aim is to make it really very easy to use for all people, even those without
 
 It consists of physical artifacts of technology designed and offered by the open design movement. Both free and 
 open-source software (FOSS) as well as open-source hardware are created by this open-source culture movement and 
-apply a like concept to a variety of components. It is sometimes, thus, referred to as FOSH 
-(free and open-source hardware). The term usually means that information about the hardware is easily discerned 
-so that others can make it - coupling it closely to the maker movement. Hardware design (i.e. mechanical 
-drawings, schematics, bills of material, PCB layout data, HDL source code and integrated circuit layout data), 
-in addition to the software that drives the hardware, are all released under free/Libre terms. The original 
+apply a like concept to a variety of components. It is sometimes, thus, referred to as free and open-source hardware (FOSH). The term 
+usually means that information about the hardware is easily discerned so that others can make it - coupling it closely to the maker 
+movement. Hardware design (i.e. mechanical drawings, schematics, bills of material, PCB layout data, HDL source code and integrated 
+circuit layout data), in addition to the software that drives the hardware, are all released under free/Libre terms. The original 
 sharer gains feedback and potentially improvements on the design from the FOSH community. There is now significant 
 evidence that such sharing can drive a high return on investment for investors.
 
@@ -123,7 +122,7 @@ license by which the author distributes the work.
 ###***Hardware openness license and confusing "open" terms***
 
 The market is full of crowdfunded projects where the funders claim that the project is based in open hardware.
-What becomes evident following a deep research is that they require the operation of a full range of so-called binary blobs (possible backdoor), chipset restrictions (software required to be signed by the manufacturer) and questions about missing or obfsucated documented parts or schemas/diagrams. The result could be any of these posibilites:
+What becomes evident following a deep research is that they require the operation of a full range of so-called binary blobs (possible backdoor), chipset restrictions (software required to be signed by the manufacturer), and questions about missing or obfsucated documented parts or schemas/diagrams. The result could be any of these posibilites:
 
 - ARM TrustZone is a blackbox: TrustZone technology within Cortex-A based application processors is commonly used to run trusted boot and is a trusted OS to create a Trusted Execution Environment (TEE). Typical use cases include the protection of authentication mechanisms, cryptography, key material and DRM. As you can imagine this is a big antiopen market mechanism.
 
@@ -184,9 +183,9 @@ What becomes evident following a deep research is that they require the operatio
 
 ###***How does Libre Router protect us?***
 
-Libre router, combined with Linux Libre and hardened OS configuration shown above, protects us in many ways, as follows:
+Libre router, combined with Linux Libre and the hardened OS configuration shown above, protects us in many ways, as follows:
  
-	- With our OS, a secured open operating system when we would have the hardened version of it based on 
+	- With our OS, a secured open operating system with the hardened version based on 
 	  Debian Libre and LFS  https://cageos.org/index.php?page=technical#kernel
 	- Decentralizing the services you consume from the cloud at local alternatives (making it impossible to 
 	  apply big data enemy corps.) 
@@ -196,11 +195,11 @@ Libre router, combined with Linux Libre and hardened OS configuration shown abov
 	- A secure Storage System with collaborative tools based in TahoeLafs over i2P and blocksnet.
 	- Transparent Email encryption for your actual email. 
 	- Anonymous web traffic enforcer Ad-blocker, intrusion prevention system, anti-virus and anti-tracking technology 
-	  for your web browsing. Filtering virus, exploits, malware, ads, bad reputation IP and tasteless content. 
-	- Different services that track all of the data transactions like Internet proxy, clamav, surikata proxy, snort
+	  for your web browsing filter viruses, exploits, malware, ads, bad reputation IP and tasteless content. 
+	- Protection from different services that track data transactions like Internet proxy, clamav, surikata proxy, snort
           unbound DNS lists, iptables etc
-	- Self hosted obfuscated authentication (dissolve legal relation between user-human and legal-name), Forcing encryption in transport and in rest data.
-	- Network filtering the MetaData that expose you, like scripts,cookies, browser info, docs meta, etc.  
+	- Self hosted obfuscated authentication (dissolves the legal relation between user-human and legal-name), forcing encryption in transport and in rest data.
+	- Network filtering the MetaData that expose you, like scripts, cookies, browser info, docs meta, etc.  
 
 The following security pyramid diagram explains the different components that make our network secure.
 
@@ -303,7 +302,7 @@ The decentralized (i2p) version of Tahoe LAFS-Grid (with protections against Syb
 
 ![storage](https://github.com/Librerouter/Librekernel/blob/gh-pages/images/18-19.jpg)
 
-A grid splits your files up into little pieces, encrypts them and spreads them out geographically, making it immune to any disaster or service outage.
+A grid splits your files up into little pieces, encrypts them and spreads them out geographically, making them immune to any disaster or service outage.
 
 ![grid](https://github.com/Librerouter/Librekernel/blob/gh-pages/images/16.png)
 
@@ -315,7 +314,7 @@ You can also sync your home Librerouter with all of your portable devices to hav
 
 
 
-The Internet is full of ___free___ services and you are the product; they sell your data, in their _terms and conditions page_, that ***almost nobody reads***, and **Librerouter** operates exactly the opposite:
+The Internet is full of ___free___ services and you are the product; they sell your data, with access granted in their _terms and conditions page_ that ***almost nobody reads***; **Librerouter** operates exactly the opposite:
 
 [![4954401_orig](https://cloud.githubusercontent.com/assets/18449119/14941752/a885d1f2-0fa7-11e6-883a-317ceb75aff6.jpg)](https://www.youtube.com/watch?v=yzyafieRcWE)
 
