@@ -1,6 +1,6 @@
 ![librerouter - logo](https://cloud.githubusercontent.com/assets/13025157/14472862/85e49ae0-00f5-11e6-9591-163f1acd5098.png)
 
-#***Services are running in Librerouter***
+#***Services that run in Librerouter***
 
 ![servicecomparison](https://github.com/Librerouter/Librekernel/blob/gh-pages/images/15.png)
 
@@ -26,78 +26,74 @@
 
 ##***Purpose of this document***
 
-This document is meant to explain the Libre Router linux based open source hardware technologies integrated for creating a secure network for end users to avoid following issues that may happen with or without our explicit or implicit knowledge: 
+This document is meant to explain the Libre Router linux based open source hardware technologies integrated for creating a secure network for end users to avoid the following issues that may happen with or without our explicit or implicit knowledge: 
 
 ##***The need for this technology***
 
-	- Traffic Sniffing: those that are checking your traffic: Government spy/monitoring institutions passive actions: collecting general data from worldwide. 
+	- Traffic Sniffing: those that are monitoring your traffic (e.g. government spy/monitoring institutions) 
+			-passive actions: collecting general data from worldwide. 
 	- Malicious Internet nodes: better known as blackbones. 
-	- Your Internet provider (ISP): if they would trying anything with your data like DNS spoofing, traffic shaping, DPI.
-	- Back-doors in software (windows friend of NSA) and hardware (Cisco, Huawei,Fortinet,TP-Link) to achieve one or more of the above issues: Control, Spionage, Privacy spooks, politics, police interception, apply bigdata to your cloud for marketing, law enforcement, market research, or simply hacking outbreachs.
+	- Your Internet provider (ISP): if they would try anything with your data like DNS spoofing, traffic shaping, DPI.
+	- Back-doors in software (i.e. Windows, favourite of the NSA) and hardware (Cisco, Huawei, Fortinet, TP-Link) to achieve one or more of the following malicious objectives: Control, Espionage, Privacy spooks, politics, police interception, apply bigdata to your cloud for marketing, law enforcement, market research, or simply hacking outbreaches.
 	
 
 ##Overview of Libre Kernel components:
 
-##***Introduction to what is called Pseudo Backdoor (a secret entry door in the program's code)***
+##***Introduction to what is called 'Pseudo Backdoor' (a secret entry door in the program's code)***
 
-Software components with no available source code (the how a program was made) are called binary blobs(Binary Large Objects) or a collection of binary data stored as a single obscure object) and, as such, are mostly used for proprietary firmware images in the Linux kernel like hard drives, Ethernet, USB controllers, graphic cards etc. Though generally redistributable, binary blobs do not give the users the freedom to review the source code or any other programmer the ability to check the program itself, audit, scrutinize, modify or, consequently, redistribute any further evoluted version.
+Software components with no available source code (how the program was made) are called binary blobs (Binary Large Objects), or a collection of binary data stored as a single obscure object. As such, they are mostly used for proprietary firmware images in the Linux kernel like hard drives, Ethernet, USB controllers, graphic cards, etc. Though generally redistributable, binary blobs do not give the users the freedom to review the source code or any other programmer the ability to check the program itself, audit, scrutinize, modify or, consequently, redistribute any further evoluted version.
 
 [Blob Example](#blob-example)
 
 ##***About Linux Libre***
 
-Linux Libre is a free/Libre version of the kernel Linux suitable for use with the GNU Operating System.
-It removes non-free components from Linux, that are disguised as source code or distributed in separate files. It also disables run-time requests for non-free components, shipped separately or as part of Linux, and documentation pointing to them. The GNU Linux Libre project takes a minimal-changes approach to cleaning up Linux, making no effort to substitute components that need to be removed with functionally equivalent free/Libre ones.
+Linux Libre is a free/Libre version of the Linux kernel suitable for use with the GNU Operating System.
+It removes non-free components from Linux that are disguised as source code or distributed in separate files. It also disables run-time requests for non-free components, shipped separately or as part of Linux, and documentation pointing to them. The GNU Linux Libre project takes a minimal-changes approach to cleaning up Linux, making no effort to substitute components that need to be removed with functionally equivalent free/Libre ones.
 
-As explained earlier, its an operating system kernel and a GNU package whose aim is to remove from the Linux kernel any source code with blobs, with obfuscated source code, or is has proprietary licenses.Software components with no available source code are called binary blobs and, as such, are mostly used for proprietary firmware images in the Linux kernel.
+As explained earlier, it's an operating system kernel and a GNU package whose aim is to remove from the Linux kernel any source code with blobs, obfuscated source code, or proprietary licenses. Software components with no available source code are called binary blobs and, as such, are mostly used for proprietary firmware images in the Linux kernel.
 
-##Ways of Proprietary firmware removal and its good effects
+##Ways to remove Proprietary Firmware and their benefits
 
-1. Deblobing : It is cleaning up and verifying Linux tarballs and patches for non-Free blobs. This is done using the script files deblob-check for verifying the Vanilla Linux kernel tarball for any non-free proprietary, blobs. . Similarly for removing the blobs there is a scripts deblob-* where * represents the Kernel version its tested and applicable for. The script can be found here <http://www.fsfla.org/svn/fsfla/software/linux-libre/scripts/>
+1. Deblobbing : This is the cleaning up and verification of Linux tarballs and patches for non-Free blobs. This is done using the script files deblob-check for verifying the Vanilla Linux kernel tarball for any non-free proprietary blobs. Similarly for removing the blobs there is a script deblob-* where * represents the Kernel version it's tested and applicable for. The script can be found here <http://www.fsfla.org/svn/fsfla/software/linux-libre/scripts/>
 
 2. VRMS(Virtual Richard M. Stallman)
 A program that analyzes the set of currently-installed packages on a Debian-based system, and reports all of the packages from the non-free tree which are currently installed. Software gets placed in the non-free tree when it is agreed not to be too problematic for 
-Debian to distribute but does not meet the Debian Free Software Guidelines and therefore cannot be included in their official distribution. For each program from "non-free" installed, VRMS displays an explanation of why it is non-free, if one is available. More information about VRMS can be fount at <https://alioth.debian.org/projects/vrms/>
+Debian to distribute but does not meet the Debian Free Software Guidelines and therefore cannot be included in their official distribution. For each program from "non-free" installed, VRMS displays an explanation of why it is non-free, if one is available. More information about VRMS can be found at <https://alioth.debian.org/projects/vrms/>
 
 3. Keep the base deblobbed kernel compilation clean:
-Use clean basement and don't allow installation of 3rd party software that is established by trust control is free of blobs. For Example for Linux Libre here is the link <http://www.linux-libre.fsfla.org/pub/linux-libre/releases/LATEST-4.6.N/> 
+Use clean basement and don't allow installation of 3rd party software that is established by trust control as free of blobs. An example of this for Linux Libre can be found at <http://www.linux-libre.fsfla.org/pub/linux-libre/releases/LATEST-4.6.N/> 
 
 ###Kernel
 
 The Linux kernel is a Unix-like computer operating system kernel. The Linux operating system is based on it and deployed on both traditional computer systems such as personal computers and servers, usually in the form of Linux distributions,[9] and on various embedded devices such as routers, wireless access points, PBXes, set-top boxes, FTA receivers, smart TVs, PVRs and NAS appliances. The Android operating system for tablet computers, smartphones and smartwatches is also based atop the Linux kernel.
-The Linux kernel was conceived and created in 1991 by Linus Torvalds[10] for his personal computer and with no cross-platform intentions, but has since expanded to support a huge array of computer architectures, many more than other operating systems or kernels
+The Linux kernel was conceived and created in 1991 by Linus Torvalds[10] for his personal computer with no cross-platform intentions, but has since expanded to support a huge array of computer architectures, many more than other operating systems or kernels
 
 Debian vanilla kernel:
 	- Doesn't include any non-free firmware (bugs aside), but it allows users to load non-free 
-          firmware if they wish to do so, which might pose the same kind of threats like, Trojans, tracking, 
+          firmware if they wish to do so, which might pose the same kind of threats as Trojans, tracking, 
           kernel training with malicious software, sniffing etc.
 	
 Linux Libre kernel:
-	- The Linux Libre kernel doesn't include any non-free firmware or anything looking like firmware, and it prevents users from loading non-free firmware even if they wish to do so.
-	- Is built by running a deblob script on the kernel source code. This goes through the kernel source code, and makes various firmware-related changes. 
-	- Any firmware for which source code is available is preserved, but the script makes sure the source code is available. 
-	- Any module requiring firmware is stripped of the ability to load the firmware. 
-	- Any source code which looks like firmware (sequences of numbers) is removed. 
-	- Any file containing only firmware (e.g. the contents of firmware/radeon) is removed. 
+	- The Linux Libre kernel doesn't include any non-free firmware or anything looking like firmware, and it prevents users from loading non-free firmware even if they wish to do so. It is built by running a deblob script on the kernel source code; this goes through the source code and makes various firmware-related changes.  Any firmware for which source code is available is preserved, but the script makes sure the cource code is available. Any module requiring firmware is stripped of the ability to load it and any source code which looks like firmware (sequences of numbers) is removed. Any file containing only firmware (e.g. the contents of firmware/radeon) is also removed.
 	
 ##Libre Router
 
-In the previous section we talked about Linux Libre which is Linux based operating system kernel and a GNU package.
-In this and following few sessions we are going to talk about it's counterpart called LibreRouter which is nothing but a Open Source hardware with no malignant backdoors in the used programs, with source code for kernel logic as well as firmware where Open Source developers will have as much control as possible to bypass the censorship and enforce the security for users.
+In the previous section we talked about Linux Libre which is a Linux based operating system kernel and a GNU package.
+In this and the following few sections we are going to talk about its counterpart called LibreRouter, which is nothing but an Open Source hardware with no malignant backdoors in the used programs, with source code for kernel logic as well as firmware where Open Source developers will have as much control as possible to bypass the censorship and ensure security for the users.
 
-In simplest term it's a GNU Free and Open Source Hardware (FOSH) running GNU software.
+In the simplest terms it's a GNU Free and Open Source Hardware (FOSH) running GNU software.
 
-A unique integration of open source hardware by GNU software maintained by Open Source community.
-With minimal training and simple documentation you can achieve a decrease cyber risks levels and increase your privacy.
-The aim its to make a really very easy to use for all people without computers and networking knowledge also, aim to be simple Plug and play system to make your traffic untraceable and secure. It is the future home and only privacy viable data center infrastructure. 
+A unique integration of open source hardware by GNU software maintained by the Open Source community.
+With minimal training and simple documentation you can achieve a decrease in cyber risk levels and increase your privacy.
+The aim is to make it really very easy to use for all people, even those without computer and networking knowledge. Additionally, the aim is to be a simple plug and play system to make your traffic untraceable and secure. It is the future home and only privacy viable data center infrastructure. 
 
 ##Open Source Hardware
 
 ![ddvdvdvd](https://github.com/Librerouter/Librekernel/blob/gh-pages/images/correction_bulk.jpg)
 
 It consists of physical artifacts of technology designed and offered by the open design movement. Both free and 
-open-source software (FOSS) as well as open-source hardware is created by this open-source culture movement and 
-applies a like concept to a variety of components. It is sometimes, thus, referred to as FOSH 
+open-source software (FOSS) as well as open-source hardware are created by this open-source culture movement and 
+apply a like concept to a variety of components. It is sometimes, thus, referred to as FOSH 
 (free and open-source hardware). The term usually means that information about the hardware is easily discerned 
 so that others can make it - coupling it closely to the maker movement. Hardware design (i.e. mechanical 
 drawings, schematics, bills of material, PCB layout data, HDL source code and integrated circuit layout data), 
@@ -114,7 +110,7 @@ The license allows developers and companies to use and integrate software releas
 code of their own components. The license only requires software under the LGPL be modifiable by end users via source 
 code availability. For proprietary software, code under the LGPL is usually used in the form of a shared library such 
 as a DLL, so that there is a clear separation between the proprietary and LGPL components. The LGPL is primarily used 
-for software libraries, although it is also used by some stand-alone applications. please visit <https://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License> 
+for software libraries, although it is also used by some stand-alone applications. Please visit <https://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License> 
 
 ####CC (Creative Commons) License:
 A Creative Commons (CC) license is one of several public copyright licenses that enable the free distribution of 
@@ -124,14 +120,14 @@ to allow only non-commercial uses of their own work) and protects the people who
 work from concerns of copyright infringement as long as they abide by the conditions that are specified in the 
 license by which the author distributes the work.
 
-###***Hardware openess license and confusing "open" terms***
+###***Hardware openness license and confusing "open" terms***
 
-The market is full of crowdfunded projects where the funders claimed that the project is based in open hardware.
-What mostly resulted under a deep research that it requires to operate full range of such called binary blobls (possible backdoor), chipset restringtions (software requires to be signed by the manufacturer) and questions about missing or obfsucated documented parts or schemas/diagrams. The result could be any of this posibilites:
+The market is full of crowdfunded projects where the funders claim that the project is based in open hardware.
+What becomes evident following a deep research is that they require the operation of a full range of so-called binary blobs (possible backdoor), chipset restrictions (software required to be signed by the manufacturer) and questions about missing or obfsucated documented parts or schemas/diagrams. The result could be any of these posibilites:
 
-- ARM Truszone is a blackbox (TrustZone technology within Cortex-A based application processors is commonly used to run trusted boot and a trusted OS to create a Trusted Execution Environment (TEE). Typical use cases include the protection of authentication mechanisms, cryptography, key material and DRM) As you can imagine this is a big antiopen market mechanism.
+- ARM TrustZone is a blackbox: TrustZone technology within Cortex-A based application processors is commonly used to run trusted boot and is a trusted OS to create a Trusted Execution Environment (TEE). Typical use cases include the protection of authentication mechanisms, cryptography, key material and DRM. As you can imagine this is a big antiopen market mechanism.
 
-- Device drivers=controllers or the chipset could may be not opensource (https://en.wikipedia.org/wiki/Device_driver)
+- Device drivers: controllers or the chipset may not be opensource (https://en.wikipedia.org/wiki/Device_driver)
 - No source code or the compiler is not opensource
 - https://en.wikipedia.org/wiki/Source_code 
 - https://en.wikipedia.org/wiki/Compiler
@@ -140,7 +136,7 @@ What mostly resulted under a deep research that it requires to operate full rang
 - https://en.wikipedia.org/wiki/Bootstrapping_(compilers)
 - https://www.win.tue.nl/~aeb/linux/hh/thompson/trust.html
 
-- No documentation No schematics on the components of the circuit board.
+- No documentation: no schematics on the components of the circuit board.
 - Not using free booting boot system. 
 - https://en.wikipedia.org/wiki/Coreboot 
 - https://www.phoronix.com/scan.php?page=news_item&px=Coreboot-U-Boot-Payload
@@ -186,51 +182,51 @@ What mostly resulted under a deep research that it requires to operate full rang
 - https://en.wikipedia.org/wiki/Common_Criteria
 - http://www.asd.gov.au/infosec/aisep/crypto.htm
 
-##***How does Libre Router protects us***
+###***How does Libre Router protect us?***
 
-Libre router combined with Linux Libre and hardened OS configuration shown above protects us in many ways as follows:
+Libre router, combined with Linux Libre and hardened OS configuration shown above, protects us in many ways, as follows:
  
 	- With our OS, a secured open operating system when we would have the hardened version of it based on 
 	  Debian Libre and LFS  https://cageos.org/index.php?page=technical#kernel
-	- Decentralizing the services you consume from the cloud at local alternatives (making impossible to 
+	- Decentralizing the services you consume from the cloud at local alternatives (making it impossible to 
 	  apply big data enemy corps.) 
 	- A decentralized anonymous Search Engine with admin rights.  
 	- A filter-connector for your Social Networks in one single place using decentralized social network Friendica.
 	- Secure decentralized video conferences based in XMPPoverTOR or WebRTC. 
-	- A secure Storage System with collaborative tools based in : TahoeLafs over i2P and blocksnet.
+	- A secure Storage System with collaborative tools based in TahoeLafs over i2P and blocksnet.
 	- Transparent Email encryption for your actual email. 
 	- Anonymous web traffic enforcer Ad-blocker, intrusion prevention system, anti-virus and anti-tracking technology 
-	  for your web - browsing. Filtering virus, exploits, malware, ads , bad reputation IP and tasteless content. 
-	- Different services that tract of all the data transaction like Internet proxy, clamav, surikata proxy, snort
+	  for your web browsing. Filtering virus, exploits, malware, ads, bad reputation IP and tasteless content. 
+	- Different services that track all of the data transactions like Internet proxy, clamav, surikata proxy, snort
           unbound DNS lists, iptables etc
-	- Self hosted obfuscated authentication (dissolve legal relation between user-human and legal-name), Forcing         encryption in transport and in rest data.
+	- Self hosted obfuscated authentication (dissolve legal relation between user-human and legal-name), Forcing encryption in transport and in rest data.
 	- Network filtering the MetaData that expose you, like scripts,cookies, browser info, docs meta, etc.  
 
-Following security pyramid diagram explains the different components that make our network secure.
+The following security pyramid diagram explains the different components that make our network secure.
 
 ![mempro](https://github.com/Librerouter/Librekernel/blob/gh-pages/images/6.png)
 
-Following image shows how Libre Router protects by sitting between the outer Internet and out private network
+The following image shows how Libre Router protects by sitting between the outer Internet and your private network
 
 ![metapollas](https://github.com/Librerouter/Librekernel/blob/gh-pages/images/13.png)
 
 #Technical Overview
 
-Libre Router use technologies like Free Open Source hardware, Linux Libre, hardened Linux , encryption and many other  to protect the end user or clients agaisnt intrusions, malicious attacks, unwanted advertisements creating a LAN (Local Netwrok area) insside another LAN (your internet router lan)
+Libre Router uses technologies like Free Open Source hardware, Linux Libre, hardened Linux, encryption and many others to protect the end user or clients against intrusions, malicious attacks, and unwanted advertisements creating a LAN (Local Netwrok area) inside another LAN (your internet router LAN)
 
 ###***Using Libre Router to build a secure network***
 
 ####From inside secureLAN
-Imagine your at home, then you use the services locally (local server, local services)
+Imagine you're at home, then you use the services locally (local server, local services)
 
 ![from home](https://github.com/Librerouter/Librekernel/blob/gh-pages/images/7.png)
 
 From being routed through any Darknet 
-Imagine your at work, then you use the services in your home through Darknets (remote server, remote services in TOR, I2P, and others VPNs) In your company its just https traffic so nobody see insside. You can use your personal storage, socialnetwork and everything with security and obscurity. 
+Imagine you're at work, then you use the services in your home through Darknets (remote server, remote services in TOR, I2P, and others VPNs). In your company it's just https traffic so nobody can see inside. You can use your personal storage, social network and everything with security and obscurity. 
 
 ![10](https://cloud.githubusercontent.com/assets/13025157/18872250/c8db5f30-84b9-11e6-8f2f-1e1d7be0b42b.png)
 
-Following diagram shows the current issues, safeguards against them and the open Source components that help us get rid of it. 
+The following diagram shows the current issues, safeguards against them and the open Source components that help us get rid of it. 
 
 ![Issues_Safegaurds](https://github.com/Librerouter/Librekernel/blob/gh-pages/images/14.png)
 
@@ -274,20 +270,20 @@ https://cageos.org/index.php?page=apps&section=SecureEmail
 
 ![email](https://github.com/Librerouter/Librekernel/blob/gh-pages/images/34-35.png)
 
-#***Service The descentralized Social networkNetwork***
+#***Service: The decentralized Social Network***
 
-Librerouter can act as a unified entry and outgoing point for all of your posts across social networks, as well as a filter for what is important to you.For example, do you hate cat videos? (Really? Can I get you some help?)
+Librerouter can act as a unified entry and outgoing point for all of your posts across social networks, as well as a filter for what is important to you. For example, do you hate cat videos? (Really? Can I get you some help?)
 You can use Librerouter to filter them out when it automatically imports posts from Facebook, Twitter, and Pinterest!
-You control your incoming and outgoing posts, and push your posts from a single place to everywhere with no need to open each social network in a separate tab.We aren’t asking you to give up on social media.Instead we offer you a way to be in the captain’s chair.
+You control your incoming and outgoing posts, and push your posts from a single place to everywhere with no need to open each social network in a separate tab. We aren’t asking you to give up on social media, instead we offer you a way to be in the captain’s chair.
 
-##Service The descentralized Video Conference
+##Service: The decentralized Video Conference
 
-With federated XMPP servers for authentication but perfect for discovering users outside the Librerouter network with security from the normal web.  
+With federated XMPP servers for authentication, perfect for discovering users outside the Librerouter network with security from the normal web.  
 Unauthenticated and decentralized web browser video conferencing through anonymous links to create fast video conference rooms without third parties or middlemen involved.
 
-##Service Descentralized Indestructible Storage the RockStar app
+##Service: Decentralized Indestructible Storage; the RockStar app
 
-Imagine all the important information you have stored on the hard drive of your computer.You are just one hardware failure away from disaster.After all, when did you do your last backup? Unfortunately, centralized storage solutions such as Dropbox and Google Drive also present a variety of risks:
+Imagine all the important information you have stored on the hard drive of your computer. You are just one hardware failure away from disaster. After all, when did you do your last backup? Unfortunately, centralized storage solutions such as Dropbox and Google Drive also present a variety of risks:
 
 • Data kidnapping: A real example was Mega. (FBI closed it in 2009). 
 • Disaster: Your external hard disks fail or stolen. (no disaster recovery)   
@@ -313,13 +309,13 @@ A grid splits your files up into little pieces, encrypts them and spreads them o
 
 ![grid4](https://github.com/Librerouter/Librekernel/blob/gh-pages/images/20.png)
 
-You can also sync your home Librerouter with all of your portable devices to have the same files and receive the same alerts in real time.If someone steals your cube or for some reason it is destroyed, you can simply buy a replacement Librerouter server and recover your lost data automatically from the Grid.In minutes you’re up and running again!
+You can also sync your home Librerouter with all of your portable devices to have the same files and receive the same alerts in real time. If someone steals your cube or for some reason it is destroyed, you can simply buy a replacement Librerouter server and recover your lost data automatically from the Grid. In minutes you’re up and running again!
 - https://cageos.org/index.php?page=pilarservices
 ![espacioblanco](https://cloud.githubusercontent.com/assets/17382786/14488687/b41768ba-0169-11e6-96cd-80377e21231d.png)
 
 
 
-The Internet is full of ___free___ services and you are the product they sell your data, in their _terms and conditions page_, that ***almost nobody reads***, and **Librerouter** operates exactly the opposite:
+The Internet is full of ___free___ services and you are the product; they sell your data, in their _terms and conditions page_, that ***almost nobody reads***, and **Librerouter** operates exactly the opposite:
 
 [![4954401_orig](https://cloud.githubusercontent.com/assets/18449119/14941752/a885d1f2-0fa7-11e6-883a-317ceb75aff6.jpg)](https://www.youtube.com/watch?v=yzyafieRcWE)
 
