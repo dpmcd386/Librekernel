@@ -39,9 +39,9 @@ This document is meant to explain the Libre Router linux-based open source hardw
 
 ##Overview of Libre Kernel components:
 
-##***Introduction to what is called 'Pseudo Backdoor' (a secret entry door in the program's code)***
+##***Introduction to what is called a 'Pseudo Backdoor' (a secret entry door in the program's code)***
 
-Software components with no available source code (how the program was made) are called binary blobs (Binary Large Objects), or a collection of binary data stored as a single obscure object. As such, they are mostly used for proprietary firmware images in the Linux kernel like hard drives, Ethernet, USB controllers, graphic cards, etc. Though generally redistributable, binary blobs do not give the users the freedom to review the source code or any other programmer the ability to check the program itself, audit, scrutinize, modify or, consequently, redistribute any further evoluted version.
+Software components with no available source code (how the program was made) are called binary blobs (Binary Large Objects), or a collection of binary data stored as a single obscure object. As such, they are mostly used for proprietary firmware images in the Linux kernel like hard drives, Ethernet, USB controllers, graphic cards, etc. Though generally redistributable, binary blobs do not give the users the freedom to review the source code, or any other programmer the ability to check the program itself, audit, scrutinize, modify or, consequently, redistribute any further evoluted version.
 
 [Blob Example](#blob-example)
 
@@ -52,12 +52,12 @@ It removes non-free components from Linux that are disguised as source code or d
 
 As explained earlier, it's an operating system kernel and a GNU package whose aim is to remove from the Linux kernel any source code with blobs, obfuscated source code, or proprietary licenses. Software components with no available source code are called binary blobs and, as such, are mostly used for proprietary firmware images in the Linux kernel.
 
-##Ways to remove Proprietary Firmware and the benefits thereof
+##Ways to remove Proprietary Firmware, and the benefits thereof
 
 1. Deblobbing : This is the cleaning up and verification of Linux tarballs and patches for non-Free blobs. This is done using the script files deblob-check for verifying the Vanilla Linux kernel tarball for any non-free proprietary blobs. Similarly for removing the blobs there is a script deblob-* where * represents the Kernel version it's tested and applicable for. The script can be found here <http://www.fsfla.org/svn/fsfla/software/linux-libre/scripts/>
 
-2. VRMS(Virtual Richard M. Stallman)
-A program that analyzes the set of currently-installed packages on a Debian-based system, and reports all of the packages from the non-free tree which are currently installed. Software gets placed in the non-free tree when it is agreed not to be too problematic for 
+2. VRMS(Virtual Richard M. Stallman): 
+A program that analyzes the set of currently-installed packages on a Debian-based system, and reports all of the packages from the non-free tree which are currently installed. Software gets categorized in the non-free tree when it is agreed not to be too problematic for 
 Debian to distribute but does not meet the Debian Free Software Guidelines and, therefore, cannot be included in their official distribution. For each program from "non-free" installed, VRMS displays an explanation of why it is non-free, if one is available. More information about VRMS can be found at <https://alioth.debian.org/projects/vrms/>
 
 3. Keep the base deblobbed kernel compilation clean:
@@ -65,7 +65,7 @@ Use clean basement and don't allow installation of 3rd party software that is es
 
 ###Kernel
 
-The Linux kernel is a Unix-like computer operating system kernel. The Linux operating system is based on it and deployed on both traditional computer systems such as personal computers and servers, usually in the form of Linux distributions,[9] and on various embedded devices such as routers, wireless access points, PBXes, set-top boxes, FTA receivers, smart TVs, PVRs and NAS appliances. The Android operating system for tablet computers, smartphones and smartwatches is also based atop the Linux kernel.
+The Linux kernel is a Unix-like computer operating system kernel. The Linux operating system is based on it and deployed both on traditional computer systems such as personal computers and servers, usually in the form of Linux distributions[9], and on various embedded devices such as routers, wireless access points, PBXes, set-top boxes, FTA receivers, smart TVs, PVRs and NAS appliances. The Android operating system for tablet computers, smartphones and smartwatches is also based atop the Linux kernel.
 The Linux kernel was conceived and created in 1991 by Linus Torvalds[10] for his personal computer with no cross-platform intentions, but has since expanded to support a huge array of computer architectures, many more than other operating systems or kernels.
 
 Debian vanilla kernel:
@@ -74,18 +74,18 @@ Debian vanilla kernel:
           kernel training with malicious software, sniffing etc.
 	
 Linux Libre kernel:
-	- The Linux Libre kernel doesn't include any non-free firmware or anything looking like firmware, and it prevents users from loading non-free firmware even if they wish to do so. It is built by running a deblob script on the kernel source code; this goes through the source code and makes various firmware-related changes.  Any firmware for which source code is available is preserved, but the script makes sure the cource code is available. Any module requiring firmware is stripped of the ability to load it and any source code which looks like firmware (sequences of numbers) is removed. Any file containing only firmware (e.g. the contents of firmware/radeon) is also removed.
+	- The Linux Libre kernel doesn't include any non-free firmware or anything looking like firmware, and it prevents users from loading non-free firmware even if they wish to do so. It is built by running a deblob script on the kernel source code; this goes through the source code and makes various firmware-related changes.  Any firmware for which source code is available is preserved, but the script must confirm that the source code is available. Any module requiring firmware is stripped of the ability to load it and any source code which looks like firmware (sequences of numbers) is removed. Any file containing only firmware (e.g. the contents of firmware/radeon) is also removed.
 	
 ##Libre Router
 
 In the previous section we talked about Linux Libre which is a Linux based operating system kernel and a GNU package.
-In this and the following few sections we are going to talk about its counterpart called LibreRouter, which is nothing but an Open Source hardware with no malignant backdoors in the used programs, with source code for kernel logic as well as firmware where Open Source developers will have as much control as possible to bypass the censorship and ensure security for the users.
+In this and the following few sections we are going to talk about its counterpart called LibreRouter, which is no more than an Open Source hardware with no malignant backdoors in the used programs, with source code for kernel logic as well as firmware where Open Source developers will have as much control as possible to bypass the censorship and ensure security for the users.
 
 In the simplest terms it's a GNU Free and Open Source Hardware (FOSH) running GNU software.
 
 A unique integration of open source hardware by GNU software maintained by the Open Source community.
 With minimal training and simple documentation you can achieve a decrease in cyber risk levels and increase your privacy.
-The aim is to make it really very easy to use for all people, even those without computer and networking knowledge. Additionally, the aim is to be a simple plug and play system to make your traffic untraceable and secure. It is the future home and only privacy viable data center infrastructure. 
+The aim is to make it really very easy to use for all people, even those without computer and networking knowledge, while serving as a simple plug and play system to make your traffic untraceable and secure. It is the future home and only privacy viable data center infrastructure. 
 
 ##Open Source Hardware
 
@@ -122,11 +122,11 @@ license by which the author distributes the work.
 ###***Hardware openness license and confusing "open" terms***
 
 The market is full of crowdfunded projects where the funders claim that the project is based in open hardware.
-What becomes evident following a deep research is that they require the operation of a full range of so-called binary blobs (possible backdoor), chipset restrictions (software required to be signed by the manufacturer), and questions about missing or obfsucated documented parts or schemas/diagrams. The result could be any of these posibilites:
+What becomes evident following deep and extensive research is that they require the operation of a full range of so-called binary blobs (possible backdoors), chipset restrictions (software required to be signed by the manufacturer), and questions about missing or obfsucated documented parts or schemas/diagrams. The result could be any of these posibilites:
 
 - ARM TrustZone is a blackbox: TrustZone technology within Cortex-A based application processors is commonly used to run trusted boot and is a trusted OS to create a Trusted Execution Environment (TEE). Typical use cases include the protection of authentication mechanisms, cryptography, key material and DRM. As you can imagine this is a big antiopen market mechanism.
 
-- Device drivers: controllers or the chipset may not be opensource (https://en.wikipedia.org/wiki/Device_driver)
+- Device drivers: the controllers or chipset may not be opensource (https://en.wikipedia.org/wiki/Device_driver)
 - No source code or the compiler is not opensource
 - https://en.wikipedia.org/wiki/Source_code 
 - https://en.wikipedia.org/wiki/Compiler
@@ -273,7 +273,7 @@ https://cageos.org/index.php?page=apps&section=SecureEmail
 
 Librerouter can act as a unified entry and outgoing point for all of your posts across social networks, as well as a filter for what is important to you. For example, do you hate cat videos? (Really? Can I get you some help?)
 You can use Librerouter to filter them out when it automatically imports posts from Facebook, Twitter, and Pinterest!
-You control your incoming and outgoing posts, and push your posts from a single place to everywhere with no need to open each social network in a separate tab. We aren’t asking you to give up on social media, instead we offer you a way to be in the captain’s chair.
+You control your incoming and outgoing posts, and push your posts from a single place to all of your networks with no need to open each separately. We aren’t asking you to give up on social media, instead we offer you a way to be in the captain’s chair.
 
 ##Service: The decentralized Video Conference
 
@@ -290,7 +290,7 @@ Imagine all the important information you have stored on the hard drive of your 
 
 ![gridstorage](https://github.com/Librerouter/Librekernel/blob/gh-pages/images/16.png)
 
-The decentralized (i2p) version of Tahoe LAFS-Grid (with protections against Sybil attacks and upload Dodos) is a new way to make your data indestructible. A grid splits your files up into little pieces, encrypts them and spreads them out geographically, making it immune to any disaster or service outage.
+The decentralized (i2p) version of Tahoe LAFS-Grid (with protections against Sybil attacks and upload Dodos) is a new way to make your data indestructible. A grid splits your files up into little pieces, encrypts them, and spreads them out geographically, making the data immune to any disaster or service outage.
 In our decentralized system your valuable information is encrypted three times:
 1. Before it even leaves your computer, in the web browser
 2. In the collaboration tool before the data goes to the hard disk
